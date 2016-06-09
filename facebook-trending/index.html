@@ -15,7 +15,7 @@
         if(data.status == 'ok'){
             var output = '<h1>'+data.feed.title+'</h1>';
             for(var i=0;i<data.items.length;++i){
-                output += '<h2><a href="' + data.items[i].link + '" >' + data.items[i].title + '</h2></a>';
+                output += '<h2><a href="' + data.items[i].link + '" >' + data.items[i].title + '</a></h2>';
             }
             content.innerHTML = output;
         }
