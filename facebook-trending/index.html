@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hackers news - rss2json.com</title>
+</head>
+<body>
+<div id="content"></div>
+
+<script type="text/javascript">
+    var content = document.getElementById('content');
+
+    function showFeed(data){
+        if(data.status == 'ok'){
+
+            var output = '<h1>'+data.feed.title+'</h1>';
+
+            for(var i=0;i<data.items.length;++i){
+
+                output += '<p><h2><a href="' +
+                data.items[i].link + '" >' +
+                data.items[i].title + '</h2></a></p>';
+
+            }
+
+
+            content.innerHTML = output;
+
+        }
+
+    }
+</script>
+<script type="text/javascript" src="http://rss2json.com/api.json?callback=showFeed&rss_url=https%3A%2F%2Fnews.ycombinator.com%2Frss"></script>
+</body>
+</html>
