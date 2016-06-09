@@ -15,7 +15,7 @@
         if(data.status == 'ok'){
             var output = '<h1>'+data.feed.title+'</h1>';
             for(var i=0;i<data.items.length;++i){
-                output += '<p><h2><a href="' + data.items[i].link + '" >' + data.items[i].title + '</h2></a></p>';
+                output += '<h2><a href="' + data.items[i].link + '" >' + data.items[i].title + '</h2></a>';
             }
             content.innerHTML = output;
         }
@@ -40,7 +40,7 @@
 
     }
 </script>
-<script type="text/javascript" src="http://rss2json.com/api.json?callback=showFeed&rss_url=http://www.teampilipinas.info/feeds/posts/default?redirect=false&max-results=5"></script>
+<script type="text/javascript" src="http://rss2json.com/api.json?callback=showFeed&rss_url=http%3A%2F%2Fwww.teampilipinas.info%2Ffeeds%2Fposts%2Fdefault%3Fredirect%3Dfalse%26max-results%3D5"></script>
 <script type="text/javascript" src="http://rss2json.com/api.json?callback=showFeed1&rss_url=http%3A%2F%2Fwww.trendingnewsportal.net%2Ffeeds%2Fposts%2Fdefault%3Fredirect%3Dfalse%26max-results%3D5"></script>
 </body>
 </html>
