@@ -24,7 +24,7 @@
         if(data.status == 'ok'){
             var output = '<h1>'+data.feed.title+'</h1>';
             for(var i=0;i<data.items.length;++i){
-                output += '<p><h2><a href="' + data.items[i].link + '" >' + data.items[i].title + '</a></h2></p>';
+                output += '<h2><p><a href="' + data.items[i].link + '" >' + data.items[i].title + '</a></p></h2>';
             }
             content1.innerHTML = output;
         }
