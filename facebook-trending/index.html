@@ -48,7 +48,7 @@
         if(data.status == 'ok'){
             var output = '<h1>'+data.feed.title+'</h1>';
             for(var i=0;i<data.items.length;++i){
-                output += '<h2><p><a href="' + data.items[i].link + '" >' + data.items[i].title + '</a></p></h2><span class="fb-comments-count" data-href="'+data.items[i].link+'"></span><span class="fb-share-count" data-href="'+data.items[i].link+'"></span>';
+                output += '<h2><p><a href="' + data.items[i].link + '" >' + data.items[i].title + '</a></p></h2><span class="fb-comments-count" data-href="'+data.items[i].link+'"></span><span class="fb-share-button" data-href="'+data.items[i].link+'"></span>';
                 
             }
             content1.innerHTML = output;
