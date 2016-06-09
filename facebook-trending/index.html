@@ -6,9 +6,10 @@
 </head>
 <body>
 <div id="content"></div>
-
+<div id="content1"></div>
 <script type="text/javascript">
     var content = document.getElementById('content');
+    var content = document.getElementById('content1');
 
     function showFeed(data){
         if(data.status == 'ok'){
@@ -29,7 +30,27 @@
         }
 
     }
+    function showFeed1(data){
+        if(data.status == 'ok'){
+
+            var output = '<h1>'+data.feed.title+'</h1>';
+
+            for(var i=0;i<data.items.length;++i){
+
+                output += '<p><h2><a href="' +
+                data.items[i].link + '" >' +
+                data.items[i].title + '</h2></a></p>';
+
+            }
+
+
+            content1.innerHTML = output;
+
+        }
+
+    }
 </script>
 <script type="text/javascript" src="http://rss2json.com/api.json?callback=showFeed&rss_url=http://www.teampilipinas.info/atom.xml"></script>
+<script type="text/javascript" src="http://rss2json.com/api.json?callback=showFeed&rss_url=http://www.trendingnewsportal.com/atom.xml"></script>
 </body>
 </html>
