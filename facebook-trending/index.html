@@ -32,10 +32,12 @@
 <div id="content"></div>
 <div id="content1"></div>
 <div id="content2"></div>
+<div id="content3"></div>
 <script type="text/javascript">
     var content = document.getElementById('content');
     var content1 = document.getElementById('content1');
     var content2 = document.getElementById('content2');
+    var content3 = document.getElementById('content3');
 
     function showFeed(data){
         if(data.status == 'ok'){
@@ -65,10 +67,20 @@
             content2.innerHTML = output;
         }
     }
+    function showFeed3(data){
+        if(data.status == 'ok'){
+            var output = '<h1>'+data.feed.title+'</h1>';
+            for(var i=0;i<data.items.length;++i){
+                output += '<h2><p><a href="' + data.items[i].link + '" >' + data.items[i].title + '</a></p></h2><span class="fb-comments-count" data-href="'+data.items[i].link+'"></span><span class="fb-share-button" data-layout="button_count" data-href="'+data.items[i].link+'"></span>';
+                
+            }
+            content3.innerHTML = output;
+        }
+    }
 </script>
 <script type="text/javascript" src="http://rss2json.com/api.json?callback=showFeed&rss_url=http%3A%2F%2Fwww.teampilipinas.info%2Ffeeds%2Fposts%2Fdefault%3Fredirect%3Dfalse%26max-results%3D5"></script>
 <script type="text/javascript" src="http://rss2json.com/api.json?callback=showFeed1&rss_url=http%3A%2F%2Fwww.trendingnewsportal.net%2Ffeeds%2Fposts%2Fdefault%3Fredirect%3Dfalse%26max-results%3D5"></script>
 <script type="text/javascript" src="http://rss2json.com/api.json?callback=showFeed2&rss_url=http%3A%2F%2Fnews.abs-cbn.com%2Fnation%2Ffeed"></script>
-
+<script type="text/javascript" src="http://rss2json.com/api.json?callback=showFeed3&rss_url=http%3A%2F%2Fwww.newsgra.ph%2Ffeed%2F"></script>
 </body>
 </html>
