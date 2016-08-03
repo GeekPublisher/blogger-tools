@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>News Collector</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
+    <style>
+        p{
+            margin: 0px;
+        }
+    </style>
+</head>
+<body>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1221797707830992',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+<div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
+
+<div id="content"></div>
+<div id="content1"></div>
+<div id="content2"></div>
+<div id="content3"></div>
+<div id="content4"></div>
+<script type="text/javascript">
+    var content = document.getElementById('content');
+    var content1 = document.getElementById('content1');
+    var content2 = document.getElementById('content2');
+    var content3 = document.getElementById('content3');
+    var content4 = document.getElementById('content4');
+    function showFeed(data){
+        if(data.status == 'ok'){
+            var output = '<h1>'+data.feed.title+'</h1>';
+            for(var i=0;i<data.items.length;++i){
+                output += '<p><a href="' + data.items[i].link + '" >' + data.items[i].title + '</a></p><span class="fb-comments-count" data-href="'+data.items[i].link+'"></span><span class="fb-share-button" data-layout="button_count" data-href="'+data.items[i].link+'"></span>';
+            }
+            content.innerHTML = output;
+        }
+    }
+    function showFeed1(data){
+        if(data.status == 'ok'){
+            var output = '<h1>'+data.feed.title+'</h1>';
+            for(var i=0;i<data.items.length;++i){
+                output += '<p><a href="' + data.items[i].link + '" >' + data.items[i].title + '</a></p><span class="fb-comments-count" data-href="'+data.items[i].link+'"></span><span class="fb-share-button" data-layout="button_count" data-href="'+data.items[i].link+'"></span>';
+            }
+            content1.innerHTML = output;
+        }
+    }
+    function showFeed2(data){
+        if(data.status == 'ok'){
+            var output = '<h1>'+data.feed.title+'</h1>';
+            for(var i=0;i<data.items.length;++i){
+                output += '<p><a href="' + data.items[i].link + '" >' + data.items[i].title + '</a></p><span class="fb-comments-count" data-href="'+data.items[i].link+'"></span><span class="fb-share-button" data-layout="button_count" data-href="'+data.items[i].link+'"></span>';
+            }
+            content2.innerHTML = output;
+        }
+    }
+    function showFeed3(data){
+        if(data.status == 'ok'){
+            var output = '<h1>'+data.feed.title+'</h1>';
+            for(var i=0;i<data.items.length;++i){
+                output += '<p><a href="' + data.items[i].link + '" >' + data.items[i].title + '</a></p><span class="fb-comments-count" data-href="'+data.items[i].link+'"></span><span class="fb-share-button" data-layout="button_count" data-href="'+data.items[i].link+'"></span>';
+            }
+            content3.innerHTML = output;
+        }
+    }
+    function showFeed4(data){
+        if(data.status == 'ok'){
+            var output = '<h1>'+data.feed.title+'</h1>';
+            for(var i=0;i<data.items.length;++i){
+                output += '<p><a href="' + data.items[i].link + '" >' + data.items[i].title + '</a></p><span class="fb-comments-count" data-href="'+data.items[i].link+'"></span><span class="fb-share-button" data-layout="button_count" data-href="'+data.items[i].link+'"></span>';
+            }
+            content4.innerHTML = output;
+        }
+    }
+</script>
+<script type="text/javascript" src="http://rss2json.com/api.json?callback=showFeed&rss_url=http%3A%2F%2Fwww.zeibiz.com%2Ffeed%2F"></script>
+<script type="text/javascript" src="http://rss2json.com/api.json?callback=showFeed1&rss_url=http%3A%2F%2Fwww.trendingnewsphfile.net%2Fatom.xml%3Fredirect%3Dfalse"></script>
+<script type="text/javascript" src="http://rss2json.com/api.json?callback=showFeed2&rss_url=http%3A%2F%2Fwww.philippinesreports.com%2Fatom.xml%3Fredirect%3Dfalse"></script>
+<script type="text/javascript" src="http://rss2json.com/api.json?callback=showFeed3&rss_url=http%3A%2F%2Fwww.viralthread.com%2Ffeed%2F"></script>
+<script type="text/javascript" src="http://rss2json.com/api.json?callback=showFeed4&rss_url=https%3A%2F%2Fnews.google.com%2Fnews%3Fcf%3Dall%26hl%3Den%26pz%3D1%26ned%3Den_ph%26output%3Drss"></script>
+</body>
+</html>
