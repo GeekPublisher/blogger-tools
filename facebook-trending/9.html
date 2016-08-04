@@ -34,27 +34,9 @@
   data-show-faces="true">
 </div>
 
-<div id="content"></div>
-<div id="content1"></div>
-<div id="content2"></div>
-<div id="content3"></div>
-<div id="content4"></div>
+
 <script type="text/javascript">
-    var content = document.getElementById('content');
-    function showFeed(data){
-        
-            var output = '<h1>'+data.feed.title+'</h1>';
-            for(var i=0;i<data.items.length;++i){
-                output += '<p><a href="' + data.items[i].link + '" >' + data.items[i].title + '</a></p><span class="fb-comments-count" data-href="'+data.items[i].link+'"></span><span class="fb-share-button" data-layout="button_count" data-href="'+data.items[i].link+'"></span>';
-            }
-            content.innerHTML = output;
-        
-    }
-  
-</script>
-<script type="text/javascript" src="http://www.mybloggertricks.com/feeds/posts/default?alt=json&amp;callback=showFeed"></script>
-<script type="text/javascript">
-var numposts = 100;
+var numposts = 10;
 var standardstyling = true;
 function showrecentposts(json) {
   for (var i = 0; i < numposts; i++) {
