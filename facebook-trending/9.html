@@ -69,7 +69,7 @@ function showrecentposts(json) {
       }}
     posttitle = posttitle.link(posturl);
     if (standardstyling) document.write('<li>');
-    document.write(posttitle);document.write(posttitle);}
+    document.write(posttitle);document.write('<span class="fb-share-button" data-layout="button_count" data-href="'+posturl+'"></span>');}
     if (standardstyling) document.write('</li>');
 }
 </script>
