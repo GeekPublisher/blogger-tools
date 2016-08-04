@@ -54,6 +54,7 @@
 <script type="text/javascript" src="http://www.mybloggertricks.com/feeds/posts/default?alt=json&amp;callback=showFeed"></script>
 
 <script type="text/javascript">
+document.write('<table>');
 var numposts = 10;
 var standardstyling = true;
 function showrecentposts(json) {
@@ -69,10 +70,14 @@ function showrecentposts(json) {
       }}
     posttitle = posttitle.link(posturl);
     if (standardstyling) 
-    document.write(posttitle);
-    document.write('<br/><span class="fb-share-button" data-layout="button_count" data-href="'+posturl+'"></span><br/>');}
+    document.write('<tr><td><span class="fb-comments-count" data-layout="button_count" data-href="'+posturl+'"></span></td>');
+    document.write('<td><span class="fb-share-button" data-layout="button_count" data-href="'+posturl+'"></span></td>');
+    document.write('<td>'+posttitle+'</td></tr>');
+  }
  
+
 }
+ document.write('</table>');
 </script>
 
 <script src="http://www.pinoyshares.com/feeds/posts/default?orderby=published&amp;alt=json-in-script&amp;callback=showrecentposts&amp;max-results=10"></script>
