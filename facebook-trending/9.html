@@ -33,7 +33,25 @@
   data-width="450"
   data-show-faces="true">
 </div>
-
+<div id="content"></div>
+<div id="content1"></div>
+<div id="content2"></div>
+<div id="content3"></div>
+<div id="content4"></div>
+<script type="text/javascript">
+    var content = document.getElementById('content');
+    function showFeed(data){
+        
+            var output = '<h1>'+data.feed.title+'</h1>';
+            for(var i=0;i<data.items.length;++i){
+                output += '<p><a href="' + data.items[i].link + '" >' + data.items[i].title + '</a></p><span class="fb-comments-count" data-href="'+data.items[i].link+'"></span><span class="fb-share-button" data-layout="button_count" data-href="'+data.items[i].link+'"></span>';
+            }
+            content.innerHTML = output;
+        
+    }
+  
+</script>
+<script type="text/javascript" src="http://www.mybloggertricks.com/feeds/posts/default?alt=json&amp;callback=showFeed"></script>
 
 <script type="text/javascript">
 var numposts = 10;
@@ -55,7 +73,7 @@ function showrecentposts(json) {
     if (standardstyling) document.write('</li>');
 }
 </script>
-<ul>
+<ol>
 <script src="http://www.pinoyshares.com/feeds/posts/default?orderby=published&amp;alt=json-in-script&amp;callback=showrecentposts&amp;max-results=10"></script>
 </body>
 </html>
