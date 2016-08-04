@@ -58,6 +58,7 @@
 var numposts = 10;
 var standardstyling = true;
 function showrecentposts(json) {
+    document.write('<table>');
   for (var i = 0; i < numposts; i++) {
     var entry = json.feed.entry[i];
     var posttitle = entry.title.$t;
@@ -70,16 +71,16 @@ function showrecentposts(json) {
       }}
     posttitle = posttitle.link(posturl);
     if (standardstyling) 
-    document.write('<table><tr><td>');
+    document.write('<tr><td>');
     document.write('<span class="fb-comments-count" data-layout="button_count" data-href="'+posturl+'"></span>');
     document.write('</td><td>');
     document.write('<span class="fb-share-button" data-layout="button_count" data-href="'+posturl+'"></span>');
     document.write('</td><td>');
     document.write(posttitle);
-    document.write('</td></tr></table>');
+    document.write('</td></tr>');
   }
  
-
+document.write('</table>');
 }
 
 </script>
