@@ -4,31 +4,10 @@
     <meta charset="UTF-8">
     <title>News Collector</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
-    <style>
-        p{
-            margin: 0px;
-        }
-    </style>
 </head>
 <body>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1221797707830992',
-      xfbml      : true,
-      version    : 'v2.6'
-    });
-  };
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
-
-<script type="text/javascript" src="http://geekpublisher.github.io/blogger-tools/facebook-trending/js/showRecentPosts.js"></script>
+<script src="http://geekpublisher.github.io/blogger-tools/facebook-trending/js/facebookSDK.js"></script>
+<script src="http://geekpublisher.github.io/blogger-tools/facebook-trending/js/showRecentPosts.js"></script>
 <script src="http://www.pinoyshares.com/atom.xml?alt=json&amp;max-results=10&amp;callback=showRecentPosts"></script>
 </body>
 </html>
