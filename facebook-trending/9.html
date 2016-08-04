@@ -68,12 +68,13 @@ function showrecentposts(json) {
         break;
       }}
     posttitle = posttitle.link(posturl);
-    if (standardstyling) document.write('<li>');
-    document.write(posttitle);document.write('<li><span class="fb-share-button" data-layout="button_count" data-href="'+posturl+'"></span></li>');}
-    if (standardstyling) document.write('</li>');
+    if (standardstyling) 
+    document.write(posttitle);
+    document.write('<br><span class="fb-share-button" data-layout="button_count" data-href="'+posturl+'"></span>');}
+ 
 }
 </script>
-<ul>
+
 <script src="http://www.pinoyshares.com/feeds/posts/default?orderby=published&amp;alt=json-in-script&amp;callback=showrecentposts&amp;max-results=10"></script>
 </body>
 </html>
