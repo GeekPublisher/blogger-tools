@@ -40,11 +40,11 @@
 <div id="content4"></div>
 <script type="text/javascript">
     var content = document.getElementById('content');
-    function showFeed(data){
+    function showFeed(json){
         
-            var output = '<h1>'+data.feed.title+'</h1>';
-            for(var i=0;i<data.items.length;++i){
-                output += '<p><a href="' + data.items[i].link + '" >' + data.items[i].title + '</a></p><span class="fb-comments-count" data-href="'+data.items[i].link+'"></span><span class="fb-share-button" data-layout="button_count" data-href="'+data.items[i].link+'"></span>';
+            var output = '<h1>'+json.feed.title+'</h1>';
+            for(var i=0;i<json.items.length;++i){
+                output += '<p><a href="' + json.items[i].link + '" >' + json.items[i].title + '</a></p><span class="fb-comments-count" data-href="'+json.items[i].link+'"></span><span class="fb-share-button" data-layout="button_count" data-href="'+json.items[i].link+'"></span>';
             }
             content.innerHTML = output;
         
