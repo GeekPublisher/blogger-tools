@@ -1,4 +1,4 @@
-var numposts = 10;
+var numposts = 20;
 var standardstyling = true;
 function showRecentPosts(json) {
 document.write('<table>');
