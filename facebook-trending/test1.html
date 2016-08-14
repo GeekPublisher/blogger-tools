@@ -14,14 +14,14 @@ YUI().use('yql', function(Y){
         var feedmarkup = '<table>'
         var feed = r.query.results.item // get feed as array of entries
         for (var i=0; i<feed.length; i++){
-            feedmarkup += '<tr><td><span class="fb-comments-count" data-href="'+feed[i].link+'"></span></td><td><span class="fb-share-button" data-layout="button_count" data-href="'+feed[i].link+'"></td></td><td>'+feed[i].pubDate+'<td><a href="' + feed[i].link + '">'
+            feedmarkup += '<tr><td><span class="fb-comments-count" data-href="'+feed[i].link+'"></span></td><td><span class="fb-share-button" data-layout="button_count" data-href="'+feed[i].link+'"></td></td><td>'+var d=new Date(feed[i].pubDate);document.write(d.getDate()+"/"+d.getHours()+"/"+d.getUTCHours());+'<td><a href="' + feed[i].link + '">'
             feedmarkup += feed[i].title + '</a></td></tr>'
         }
         document.getElementById('qznews1').innerHTML = feedmarkup + '</table>'
     })
 })
-var d=new Date("October 13, 1975 11:13:00");
-document.write(d.getDate()+"/"+d.getHours()+"/"+d.getUTCHours()+ " milliseconds since 1970/01/01");
+
+
 </script>
 
 
