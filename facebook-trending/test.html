@@ -25,7 +25,7 @@ YUI().use('yql', function(Y){
  
 <script>
 YUI().use('yql', function(Y){
-    var query = 'select * from rss(0,5) where url = "http://www.gmanetwork.com/news/rss/videos/show/24oras"'
+    var query = 'select * from rss(0,15) where url = "http://www.gmanetwork.com/news/rss/videos/show/24oras"'
     var q = Y.YQL(query, function(r){
         //r now contains the result of the YQL Query as a JSON
         var feedmarkup = '<p>'
