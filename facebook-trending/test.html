@@ -1,6 +1,8 @@
 <html>
 <head></head>
 <body>
+<script src="http://geekpublisher.github.io/blogger-tools/facebook-trending/js/facebookSDK.js"></script>
+
 <script src="http://yui.yahooapis.com/3.18.1/build/yui/yui-min.js"></script>
 <div id="qznews1"></div>
  
@@ -9,13 +11,13 @@ YUI().use('yql', function(Y){
     var query = 'select * from rss(0,100) where url in ("http://www.gmanetwork.com/news/rss/publicaffairs", "http://www.gmanetwork.com/news/rss/newstv", "http://www.gmanetwork.com/news/rss/video", "http://www.gmanetwork.com/news/rss/photo", "http://www.gmanetwork.com/news/rss/news", "http://www.gmanetwork.com/news/rss/news/world", "http://www.gmanetwork.com/news/rss/news/metro", "http://www.gmanetwork.com/news/rss/news/nation", "http://www.gmanetwork.com/news/rss/news/regions", "http://www.gmanetwork.com/news/rss/news/specialreports", "http://www.gmanetwork.com/news/rss/news/pinoyabroad", "http://www.gmanetwork.com/news/rss/news/ulatfilipino", "http://www.gmanetwork.com/news/rss/money") | sort(field="pubDate", descending="true")'
     var q = Y.YQL(query, function(r){
         //r now contains the result of the YQL Query as a JSON
-        var feedmarkup = '<ol>'
+        var feedmarkup = '<table>'
         var feed = r.query.results.item // get feed as array of entries
         for (var i=0; i<feed.length; i++){
-            feedmarkup += '<li><a href="' + feed[i].link + '">'
-            feedmarkup += feed[i].title + '</a></li>'
+            feedmarkup += '<tr><td><span class="fb-comments-count" data-href="'+feed[i].link+'"></span></td><td><span class="fb-share-button" data-layout="button_count" data-href="'+feed[i].link+'"></td><td><a href="' + feed[i].link + '">'
+            feedmarkup += feed[i].title + '</a></td></tr>'
         }
-        document.getElementById('qznews1').innerHTML = feedmarkup + '</ol>'
+        document.getElementById('qznews1').innerHTML = feedmarkup + '</table>'
     })
 })
 </script>
