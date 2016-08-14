@@ -16,7 +16,12 @@ YUI().use('yql', function(Y){
         for (var i=0; i<feed.length; i++){
          var d=new Date(feed[i].pubDate);
          var month=d.getMonth()+1;
-            feedmarkup += '<tr><td><span class="fb-comments-count" data-href="'+feed[i].link+'"></span></td><td><span class="fb-share-button" data-layout="button_count" data-href="'+feed[i].link+'"></td></td><td>'+month+"/"+d.getDate()+" - "+d.getHours()+" : "+d.getMinutes()+'<td><a href="' + feed[i].link + '">'
+         var hrs = d.getHours();
+if (hrs>12 && hrs!=0){var hrs=hrs-12;var hrs=hrs+":PM";}
+else if(hrs<12 && hrs!=0){var hrs=hrs+":AM";}
+else if(hrs==12){var hrs=hrs+":PM";}
+else{var hrs=hrs+12; var hrs=hrs+":AM";}
+            feedmarkup += '<tr><td><span class="fb-comments-count" data-href="'+feed[i].link+'"></span></td><td><span class="fb-share-button" data-layout="button_count" data-href="'+feed[i].link+'"></td></td><td>'+month+"/"+d.getDate()+" - "+hrs+" : "+d.getMinutes()+'<td><a href="' + feed[i].link + '">'
             feedmarkup += feed[i].title + '</a></td></tr>'
         }
         document.getElementById('qznews1').innerHTML = feedmarkup + '</table>'
