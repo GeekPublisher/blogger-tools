@@ -8,41 +8,7 @@
  
 <script>
 YUI().use('yql', function(Y){
-    var query = 'select * from rss(0,100) where url in ("http://www.filipinonewsinfo.com/atom.xml?redirect=fale",
-"http://tradeph.blogspot.com/atom.xml?redirect=fale",
-"http://www.wattafox.com/atom.xml?redirect=fale",
-"http://www.classifiedtrends.net/atom.xml?redirect=fale",
-"http://www.scoopitph.com/atom.xml?redirect=fale",
-"http://www.nowreader.com/atom.xml?redirect=fale",
-"http://philippinesnewsportal2016.blogspot.com/atom.xml?redirect=fale",
-"http://elitenewsfeeds.blogspot.com/atom.xml?redirect=fale",
-"http://www.philippinesreports.com/atom.xml?redirect=fale",
-"http://www.thesummitexpress.com/atom.xml?redirect=fale",
-"http://www.pinoyworld.net/atom.xml?redirect=fale",
-"http://www.worldviewsph.com/atom.xml?redirect=fale",
-"http://www.theartikulounonews.com/atom.xml?redirect=fale",
-"http://www.socialpees.com/atom.xml?redirect=fale",
-"http://www.trendingnewsportal.net/atom.xml?redirect=fale",
-"http://phppoliticsnews.blogspot.com/atom.xml?redirect=fale",
-"http://www.socialnewsph.com/atom.xml?redirect=fale",
-"http://www.newskoday.net/atom.xml?/atom.xml?redirect=fale",
-"http://www.socialtrendsph.com/atom.xml?redirect=fale",
-"http://www.ncatalyst.com/atom.xml?redirect=fale",
-"http://www.du30worldwide.com/atom.xml?redirect=fale",
-"http://www.newstrendph.com/atom.xml?redirect=fale",
-"http://www.boompanot.com/atom.xml?redirect=fale",
-"http://www.xolxol.ph/atom.xml?redirect=fale",
-"http://www.netizensph.com/atom.xml?redirect=fale",
-"http://www.globalnewsph.com/atom.xml?redirect=fale",
-"http://www.philippinesreports.com/atom.xml?redirect=fale",
-"http://www.todayinmanila.com/atom.xml?redirect=fale",
-"http://www.thinkingpinoy.net/atom.xml?redirect=fale",
-"http://www.elitenewsfeed.org/atom.xml?redirect=fale",
-"http://www.trendingnewsphfile.net/atom.xml?redirect=fale",
-"http://www.sizzlingfeed.com/atom.xml?redirect=fale",
-"http://rodydu30.blogspot.com/atom.xml?redirect=fale",
-"http://www.coolbuster.net/atom.xml?redirect=fale",
-"http://www.boytrending.com/atom.xml?redirect=fale",) | sort(field="pubDate", descending="true")'
+    var query = 'select * from rss(0,100) where url in ("http://www.filipinonewsinfo.com/atom.xml?redirect=fale","http://tradeph.blogspot.com/atom.xml?redirect=fale","http://www.wattafox.com/atom.xml?redirect=fale","http://www.classifiedtrends.net/atom.xml?redirect=fale","http://www.scoopitph.com/atom.xml?redirect=fale","http://www.nowreader.com/atom.xml?redirect=fale","http://philippinesnewsportal2016.blogspot.com/atom.xml?redirect=fale","http://elitenewsfeeds.blogspot.com/atom.xml?redirect=fale","http://www.philippinesreports.com/atom.xml?redirect=fale","http://www.thesummitexpress.com/atom.xml?redirect=fale","http://www.pinoyworld.net/atom.xml?redirect=fale","http://www.worldviewsph.com/atom.xml?redirect=fale","http://www.theartikulounonews.com/atom.xml?redirect=fale","http://www.socialpees.com/atom.xml?redirect=fale","http://www.trendingnewsportal.net/atom.xml?redirect=fale","http://phppoliticsnews.blogspot.com/atom.xml?redirect=fale","http://www.socialnewsph.com/atom.xml?redirect=fale","http://www.newskoday.net/atom.xml?/atom.xml?redirect=fale","http://www.socialtrendsph.com/atom.xml?redirect=fale","http://www.ncatalyst.com/atom.xml?redirect=fale","http://www.du30worldwide.com/atom.xml?redirect=fale","http://www.newstrendph.com/atom.xml?redirect=fale","http://www.boompanot.com/atom.xml?redirect=fale","http://www.xolxol.ph/atom.xml?redirect=fale","http://www.netizensph.com/atom.xml?redirect=fale","http://www.globalnewsph.com/atom.xml?redirect=fale","http://www.philippinesreports.com/atom.xml?redirect=fale","http://www.todayinmanila.com/atom.xml?redirect=fale","http://www.thinkingpinoy.net/atom.xml?redirect=fale","http://www.elitenewsfeed.org/atom.xml?redirect=fale","http://www.trendingnewsphfile.net/atom.xml?redirect=fale","http://www.sizzlingfeed.com/atom.xml?redirect=fale","http://rodydu30.blogspot.com/atom.xml?redirect=fale","http://www.coolbuster.net/atom.xml?redirect=fale","http://www.boytrending.com/atom.xml?redirect=fale",) | sort(field="pubDate", descending="true")'
     var q = Y.YQL(query, function(r){
         //r now contains the result of the YQL Query as a JSON
         var feedmarkup = '<table>'
