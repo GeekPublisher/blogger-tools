@@ -6,7 +6,7 @@
  
 <script>
 YUI().use('yql', function(Y){
-    var query = 'select * from rss(0,15) where url in ("http://www.gmanetwork.com/news/rss/publicaffairs", "http://www.gmanetwork.com/news/rss/newstv")'
+    var query = 'select * from rss(0,15) where url in ("http://www.gmanetwork.com/news/rss/publicaffairs", "http://www.gmanetwork.com/news/rss/newstv") | sort(field="pubDate", descending="true")'
     var q = Y.YQL(query, function(r){
         //r now contains the result of the YQL Query as a JSON
         var feedmarkup = '<p>'
