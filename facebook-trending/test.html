@@ -13,8 +13,7 @@ YUI().use('yql', function(Y){
         var feed = r.query.results.item // get feed as array of entries
         for (var i=0; i<feed.length; i++){
             feedmarkup += '<a href="' + feed[i].link + '">'
-            feedmarkup += feed[i].title + '</a><br />'
-            feedmarkup += feed[i].description + '</p>'
+            feedmarkup += feed[i].title + '</a></p>'
         }
         document.getElementById('qznews1').innerHTML = feedmarkup
     })
