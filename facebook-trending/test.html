@@ -2,30 +2,11 @@
 <head></head>
 <body>
 <script src="http://yui.yahooapis.com/3.18.1/build/yui/yui-min.js"></script>
- 
-<div id="qznews"></div>
- 
-<script>
-YUI().use('yql', function(Y){
-    var query = 'select * from rss(0,5) where url = "http://qz.com/feed/"'
-    var q = Y.YQL(query, function(r){
-        //r now contains the result of the YQL Query as a JSON
-        var feedmarkup = '<p>'
-        var feed = r.query.results.item // get feed as array of entries
-        for (var i=0; i<feed.length; i++){
-            feedmarkup += '<a href="' + feed[i].link + '">'
-            feedmarkup += feed[i].title + '</a><br />'
-            feedmarkup += feed[i].description + '</p>'
-        }
-        document.getElementById('qznews').innerHTML = feedmarkup
-    })
-})
-</script>
 <div id="qznews1"></div>
  
 <script>
 YUI().use('yql', function(Y){
-    var query = 'select * from rss(0,15) where url = "http://www.gmanetwork.com/news/rss/videos/show/24oras"'
+    var query = 'select * from rss(0,15) where url in ("http://www.gmanetwork.com/news/rss/publicaffairs", "http://www.gmanetwork.com/news/rss/newstv")'
     var q = Y.YQL(query, function(r){
         //r now contains the result of the YQL Query as a JSON
         var feedmarkup = '<p>'
