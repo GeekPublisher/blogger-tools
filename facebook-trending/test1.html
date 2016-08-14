@@ -18,6 +18,20 @@ YUI().use('yql', function(Y){
          var month=d.getMonth()+1;
          var hrs = d.getHours();
          var mins=d.getMinutes();
+         
+if (hrs>12 && hrs!=0){
+ var hrs=hrs-12;
+ if(mins<10){var mins="0"+mins;}
+ var hrs=hrs+":"+mins+" PM";}
+else if(hrs<12 && hrs!=0){
+ if(mins<10){var mins="0"+mins;}
+ var hrs=hrs+":"+mins+" AM";}
+else if(hrs==12){
+ if(mins<10){var mins="0"+mins;}
+ var hrs=hrs+":"+mins+" PM";}
+else{var hrs=hrs+12;
+ if(mins<10){var mins="0"+mins;}
+ var hrs=hrs+":"+mins+" AM";}
 if (hrs>12 && hrs!=0){var hrs=hrs-12;var hrs=hrs.mins+":PM";}
 else if(hrs<12 && hrs!=0){var hrs=hrs.mins+":AM";}
 else if(hrs==12){var hrs=hrs.mins+":PM";}
