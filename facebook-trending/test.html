@@ -6,7 +6,7 @@
  
 <script>
 YUI().use('yql', function(Y){
-    var query = 'select * from rss where url in ("http://www.gmanetwork.com/news/rss/publicaffairs", "http://www.gmanetwork.com/news/rss/newstv", "http://www.gmanetwork.com/news/rss/video", "http://www.gmanetwork.com/news/rss/photo", "http://www.gmanetwork.com/news/rss/news", "http://www.gmanetwork.com/news/rss/news/world", "http://www.gmanetwork.com/news/rss/news/metro", "http://www.gmanetwork.com/news/rss/news/nation", "http://www.gmanetwork.com/news/rss/news/regions", "http://www.gmanetwork.com/news/rss/news/specialreports", "http://www.gmanetwork.com/news/rss/news/pinoyabroad", "http://www.gmanetwork.com/news/rss/news/ulatfilipino", "http://www.gmanetwork.com/news/rss/money") | sort(field="pubDate", descending="true")'
+    var query = 'select * from rss(0,100) where url in ("http://www.gmanetwork.com/news/rss/publicaffairs", "http://www.gmanetwork.com/news/rss/newstv", "http://www.gmanetwork.com/news/rss/video", "http://www.gmanetwork.com/news/rss/photo", "http://www.gmanetwork.com/news/rss/news", "http://www.gmanetwork.com/news/rss/news/world", "http://www.gmanetwork.com/news/rss/news/metro", "http://www.gmanetwork.com/news/rss/news/nation", "http://www.gmanetwork.com/news/rss/news/regions", "http://www.gmanetwork.com/news/rss/news/specialreports", "http://www.gmanetwork.com/news/rss/news/pinoyabroad", "http://www.gmanetwork.com/news/rss/news/ulatfilipino", "http://www.gmanetwork.com/news/rss/money") | sort(field="pubDate", descending="true")'
     var q = Y.YQL(query, function(r){
         //r now contains the result of the YQL Query as a JSON
         var feedmarkup = '<ol>'
@@ -15,7 +15,7 @@ YUI().use('yql', function(Y){
             feedmarkup += '<li><a href="' + feed[i].link + '">'
             feedmarkup += feed[i].title + '</a></li>'
         }
-        document.getElementById('qznews1').innerHTML = feedmarkup
+        document.getElementById('qznews1').innerHTML = feedmarkup + '</ol>'
     })
 })
 </script>
