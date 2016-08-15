@@ -22,7 +22,7 @@ YUI().use('yql', function(Y){
 if (hrs>12 && hrs!=0){
  var hrs=hrs-12;
  if(mins<10){var mins="0"+mins;}
- if(hrs<10){var space="&nbsp;&nbsp;";}
+ if(hrs<21){var space="&nbsp;&nbsp;";}
  else{var space="";}
  var hrs=space+""+hrs+":"+mins+" PM";}
 else if(hrs<12 && hrs!=0){
