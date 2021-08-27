@@ -15,7 +15,7 @@ document.write('<table>');
     posttitle = posttitle.link(posturl);
     if (standardstyling) 
     document.write('<tr><td>');
-    document.write('<span class="fb-comments-count" data-layout="button_count" data-href="'+posturl+'"></span>');
+    document.write('<span class="fb-comments-count" data-href="'+posturl+'"></span>');
     document.write('</td><td>');
     document.write('<span class="fb-share-button" data-layout="button_count" data-href="'+posturl+'"></span>');
     document.write('</td><td>');
